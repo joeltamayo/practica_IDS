@@ -7,14 +7,14 @@ struct Musica
 };
 
 void introducirDatos(struct Musica *);
-//void mostrarDatos(struct Musica);
+void mostrarDatos(struct Musica);
 
 int main()
 {
     struct Musica metadatos;
 
     introducirDatos(&metadatos);
-    // mostrarDatos(metadatos);
+    mostrarDatos(metadatos);
 
     printf("\n\n\n\n");
     system("pause");
@@ -34,4 +34,12 @@ void introducirDatos(struct Musica *meta)
 	printf("\nIntroduzca el genero del album: ");
 	fflush(stdin);
 	gets(meta->genero);
+}
+
+void mostrarDatos(struct Musica meta)
+{
+	printf("\n\n\t\t Datos guardados.");
+	printf("\nArtista: %s.", meta.artista);
+	printf("\nAlbum: %s.", meta.album);
+	printf("\nGenero: %s.", meta.genero);
 }
